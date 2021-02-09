@@ -54,7 +54,16 @@ function secuenciaUsuario(e){
                             let $cuadros1 = document.querySelectorAll(".cuadro");
                             setTimeout(function(){ 
                                 if($cuadros1.length === 0){
-                                    alert("GANASTE , TE TOMO "+movimiento+" MOVIMIENTOS")
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: "GANASTE , TE TOMO "+movimiento+" MOVIMIENTOS"
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                            return location.reload();
+                                        }else{
+                                            location.reload();   
+                                        } 
+                                    })
                                 }
                             },90);
                         },550);
