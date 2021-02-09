@@ -1,4 +1,4 @@
-let arrayColores =["red","red","blue","blue","yellow","yellow","grey","grey","green","green","orange","orange"]
+let arrayColores =["red","red","blue","blue","yellow","yellow","grey","grey","green","green","orange","orange","pink","pink","purple","purple"]
 function desordenar(array){ // esta función me desordena un array
     array = array.sort(function() {return Math.random() - 0.5});
     return array;
