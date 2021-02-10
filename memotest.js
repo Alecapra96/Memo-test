@@ -33,6 +33,7 @@ function secuenciaUsuario(e){
     $cuadros.forEach(function(cuadro){
         cuadro.onclick = function(){
             if(comparaciones.length >= 2){
+                bloquearInput();
                 if(comparaciones[0] === comparaciones[1]){
                     console.log("hizo click en el mismo cuadrado, lo vuelvo a ocultar")
                     comparaciones[0].style.backgroundColor="black"
@@ -54,6 +55,7 @@ function secuenciaUsuario(e){
                             let $cuadros1 = document.querySelectorAll(".cuadro");
                             setTimeout(function(){ 
                                 if($cuadros1.length === 0){
+                                   
                                     Swal.fire({
                                         icon: 'success',
                                         title: "GANASTE , TE TOMO "+movimiento+" MOVIMIENTOS"
@@ -78,7 +80,7 @@ function secuenciaUsuario(e){
                     }
                 }
             }
-
+            
         }
     });
     
@@ -95,4 +97,11 @@ function resaltarCuadro(cuadro){
     variable1.style.backgroundColor="black";
     variable2.style.backgroundColor="black";
     },600);
+}
+function bloquearInput(){
+    $cuadros.forEach(function($cuadro){
+        $cuadro.onclick = function(){
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        };
+    })
 }
